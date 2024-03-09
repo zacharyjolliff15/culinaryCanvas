@@ -59,3 +59,18 @@ h1 {
     min-height: 22px;
 }
 
+.row1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+    width: 100%;
+}
+
+.row2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+    width: 100%;
+}
