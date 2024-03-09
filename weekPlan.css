@@ -59,18 +59,43 @@ h1 {
     min-height: 22px;
 }
 
-.row1{
+.row1, .row2{
     display: flex;
     justify-content: center;
-    align-items: center;
-    background-color: red;
     width: 100%;
 }
 
-.row2{
+.row3, .row4, .row5, .row6{
     display: flex;
     justify-content: center;
-    align-items: center;
-    background-color: red;
+    background-color: rgb(237, 192, 110);
+    width: 100%;
+}
+
+.row7, .row8, .row9, .row10{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(105, 231, 99);
+    width: 100%;
+}
+
+.row11, .row12, .row13, .row14{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(237, 192, 110);
+    width: 100%;
+}
+
+.row15, .row16, .row17, .row18{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(105, 231, 99);
+    width: 100%;
+}
+
+.row19, .row20, .row21, .row22{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(237, 192, 110);
     width: 100%;
 }
