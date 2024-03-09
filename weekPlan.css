@@ -42,9 +42,20 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
 
-.row-A, .row-B, .row-C, .row-D, .row-E, .row-F, .row-G, .row-H, .row-I {
+.column-A, .column-B, .column-C, .column-D, .column-E, .column-F, .column-G, .column-H, .column-I {
     display: flex;
     flex-direction: column;
+    width: 100%;
+    min-width: 100px;
 }
+
+.cell{
+    display: flex;
+    border: 2px solid black;
+    justify-content: center;
+    min-height: 22px;
+}
+
