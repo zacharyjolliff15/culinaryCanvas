@@ -1,17 +1,21 @@
-/* Reset some default styles */
-body, h1 {
+
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-body {
+
+html, body {
+    width: 100%;
+    height: 100%;
     font-family: Arial, sans-serif;
 }
 
 h1 {
     color: #333;
     text-align: center;
-    margin-top: 50px;
+
 }
 
 .header {
@@ -20,7 +24,7 @@ h1 {
     align-items: center;
     background-color: #53c455;
     height: 52px;
-
+    width:100%;
 }
 
 #title{
@@ -28,9 +32,53 @@ h1 {
     font-family: "Style Script", cursive;
     font-weight: 400;
     font-style: normal;
+    
     /* background-color: red; */
 }
 
 .buttonGrid{
-    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }
+
+.indexTile{
+    height: 100px;
+    width: 100px;
+    background-color: green;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#weekPlanlogo{
+    height: 50px;
+    width: 50px;
+    background-color: white;
+    border-radius: 100px;
+
+}
+
+#shoppingListLogo{
+
+}
+
+#nutritionLogo{
+
+}
+
+#mealsLogo{
+
+}
+
+#recipesLogo{
+
+}
+
+#ingredientsLogo{
+
+}
+
+
