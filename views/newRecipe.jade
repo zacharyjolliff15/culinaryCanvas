@@ -38,7 +38,7 @@ html(lang="en")
         var newDiv = document.createElement("div");
         var selectHTML = '<select name="ingredient[]" required>';
         for (var i = 0; i < ingredientsData.length; i++) {
-          selectHTML += '<option value="' + ingredientsData[i].id + '">' + ingredientsData[i].name + '</option>';
+          selectHTML += '<option value="' + ingredientsData[i].id + '">' + ingredientsData[i].ingredients + '</option>';
         }
         selectHTML += '</select>';
         newDiv.innerHTML = selectHTML + 
