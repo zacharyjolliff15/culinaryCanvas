@@ -7,10 +7,42 @@ const port = 3000;
 
 const connection = mysql.createConnection({
   host: 'localhost',
-  user: 'your_database_user',
-  password: 'your_database_password',
-  database: 'your_database_name'
+  user: 'root',
+  password: 'password',
+  database: 'CulinaryCanvas'
 });
+
+connection.connect((err) => {
+  if (err) {
+    console.error('Error connecting to database:', err);
+    return;
+  }
+  console.log('Connected to database');
+});
+
+app.get('/display-table', (req, res) => {
+  // Query to select all records from a table (replace 'your_table_name' with your actual table name)
+  const sql = 'SELECT * FROM units';
+
+  // Execute the query
+  connection.query(sql, (err, rows) => {
+    if (err) {
+      console.error('Error executing query:', err);
+      res.status(500).send('Error retrieving data');
+      return;
+    }
+
+    // Display the results in the console
+    console.log('All records from the table:');
+    rows.forEach((row) => {
+      console.log(row);
+    });
+
+    // Send response to the client
+    res.send('Data displayed in the console');
+  });
+});
+
 
 // Serve static files from the 'public' directory
 app.use(express.static(path.join(__dirname, 'public')));
