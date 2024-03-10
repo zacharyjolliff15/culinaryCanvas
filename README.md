@@ -16,10 +16,10 @@
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">Best-README-Template</h3>
+  <h3 align="center">Culinary Canvas</h3>
 
   <p align="center">
-    An awesome README template to jumpstart your projects!
+    This is an easy to use and free application that makes meal planning easier!
     <br />
     <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
     <br />
@@ -67,17 +67,13 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-There are many great README templates available on GitHub; however, I didn't find one that really suited my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
+This is a free to use application that makes meal planning easy to do in just a few simple steps.
+1) Select the ingredients button to open the ingredients page and start adding ingredients. Input the name of the ingredient, and select from a drop down box the unit of the ingredient. Next press the button to add the ingredients.
 
-Here's why:
-* Your time should be focused on creating something amazing. A project that solves a problem and helps others
-* You shouldn't be doing the same tasks over and over like creating a README from scratch
-* You should implement DRY principles to the rest of your life :smile:
+2) Select the recipes button to open the recipes page. Use the drop down menu choose whether the recipe you are adding is either for breakfast, lunch, dinner, or a snack. You will then enter the name of the recipe and select the ingredients and their quantity.
 
-Of course, no one template will serve all projects since your needs may be different. So I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue. Thanks to all the people have contributed to expanding this template!
-
-Use the `BLANK_README.md` to get started.
-
+3) Once you complete the first two steps, you can now select either the meals, shopping list, or weekly plan buttons. The meals button will display all of the recipes based on thier type. The shopping list button will display a shopping list for the ingredients of a recipe that you have entered. The weekly plan button allows you to choose what meals you would like to eath throughout the week.
+    
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
@@ -86,14 +82,11 @@ Use the `BLANK_README.md` to get started.
 
 This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
 
-* [![Next][Next.js]][Next-url]
-* [![React][React.js]][React-url]
-* [![Vue][Vue.js]][Vue-url]
-* [![Angular][Angular.io]][Angular-url]
-* [![Svelte][Svelte.dev]][Svelte-url]
-* [![Laravel][Laravel.com]][Laravel-url]
-* [![Bootstrap][Bootstrap.com]][Bootstrap-url]
-* [![JQuery][JQuery.com]][JQuery-url]
+* HTML
+* CSS
+* javascript
+* enterprise.js
+* node.js
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -115,22 +108,14 @@ This is an example of how to list things you need to use the software and how to
 
 ### Installation
 
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
-
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
+1. Clone the repo
    ```sh
-   git clone https://github.com/your_username_/Project-Name.git
+   git clone https://github.com/zacharyjolliff15/culinaryCanvas
    ```
-3. Install NPM packages
+2. Install NPM packages
    ```sh
    npm install
    ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
-   ```
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
