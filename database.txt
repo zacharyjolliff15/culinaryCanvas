@@ -1,0 +1,132 @@
+-- MySQL Workbench Forward Engineering
+
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
+
+-- -----------------------------------------------------
+-- Schema CulinaryCanvas
+-- -----------------------------------------------------
+
+-- -----------------------------------------------------
+-- Schema CulinaryCanvas
+-- -----------------------------------------------------
+CREATE SCHEMA IF NOT EXISTS `CulinaryCanvas` DEFAULT CHARACTER SET utf8 ;
+USE `CulinaryCanvas` ;
+
+-- -----------------------------------------------------
+-- Table `CulinaryCanvas`.`units`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `CulinaryCanvas`.`units` (
+  `unit_id` INT NOT NULL AUTO_INCREMENT,
+  `unit` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`unit_id`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `CulinaryCanvas`.`ingredients`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `CulinaryCanvas`.`ingredients` (
+  `ingredients_id` INT NOT NULL AUTO_INCREMENT,
+  `ingredients` VARCHAR(45) NOT NULL,
+  `units_unit_id` INT NOT NULL,
+  PRIMARY KEY (`ingredients_id`),
+  INDEX `fk_ingredients_units_idx` (`units_unit_id` ASC) VISIBLE,
+  CONSTRAINT `fk_ingredients_units`
+    FOREIGN KEY (`units_unit_id`)
+    REFERENCES `CulinaryCanvas`.`units` (`unit_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `CulinaryCanvas`.`recipes`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `CulinaryCanvas`.`recipes` (
+  `recipes_id` INT NOT NULL AUTO_INCREMENT,
+  `recipe` VARCHAR(45) NOT NULL,
+  `quantity` INT NOT NULL,
+  PRIMARY KEY (`recipes_id`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `CulinaryCanvas`.`recipes_has_ingredients`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `CulinaryCanvas`.`recipes_has_ingredients` (
+  `recipes_recipes_id` INT NOT NULL,
+  `ingredients_ingredients_id` INT NOT NULL,
+  PRIMARY KEY (`recipes_recipes_id`, `ingredients_ingredients_id`),
+  INDEX `fk_recipes_has_ingredients_ingredients1_idx` (`ingredients_ingredients_id` ASC) VISIBLE,
+  INDEX `fk_recipes_has_ingredients_recipes1_idx` (`recipes_recipes_id` ASC) VISIBLE,
+  CONSTRAINT `fk_recipes_has_ingredients_recipes1`
+    FOREIGN KEY (`recipes_recipes_id`)
+    REFERENCES `CulinaryCanvas`.`recipes` (`recipes_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_recipes_has_ingredients_ingredients1`
+    FOREIGN KEY (`ingredients_ingredients_id`)
+    REFERENCES `CulinaryCanvas`.`ingredients` (`ingredients_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `CulinaryCanvas`.`meals`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `CulinaryCanvas`.`meals` (
+  `meals_id` INT NOT NULL AUTO_INCREMENT,
+  `breakfast` VARCHAR(45) NOT NULL,
+  `lunch` VARCHAR(45) NOT NULL,
+  `dinner` VARCHAR(45) NOT NULL,
+  `snacks` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`meals_id`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `CulinaryCanvas`.`recipes_has_meals`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `CulinaryCanvas`.`recipes_has_meals` (
+  `recipes_recipes_id` INT NOT NULL,
+  `meals_meals_id` INT NOT NULL,
+  PRIMARY KEY (`recipes_recipes_id`, `meals_meals_id`),
+  INDEX `fk_recipes_has_meals_meals1_idx` (`meals_meals_id` ASC) VISIBLE,
+  INDEX `fk_recipes_has_meals_recipes1_idx` (`recipes_recipes_id` ASC) VISIBLE,
+  CONSTRAINT `fk_recipes_has_meals_recipes1`
+    FOREIGN KEY (`recipes_recipes_id`)
+    REFERENCES `CulinaryCanvas`.`recipes` (`recipes_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_recipes_has_meals_meals1`
+    FOREIGN KEY (`meals_meals_id`)
+    REFERENCES `CulinaryCanvas`.`meals` (`meals_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `CulinaryCanvas`.`list`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `CulinaryCanvas`.`list` (
+  `list_id` INT NOT NULL AUTO_INCREMENT,
+  `sum_total` INT NOT NULL,
+  `ounces` DECIMAL NOT NULL,
+  `meals_meals_id` INT NOT NULL,
+  PRIMARY KEY (`list_id`),
+  INDEX `fk_list_meals1_idx` (`meals_meals_id` ASC) VISIBLE,
+  CONSTRAINT `fk_list_meals1`
+    FOREIGN KEY (`meals_meals_id`)
+    REFERENCES `CulinaryCanvas`.`meals` (`meals_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
