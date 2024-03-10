@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Culinary Canvas</title>
+    <link rel="stylesheet" href="/css/newRecipe.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Style+Script&display=swap" rel="stylesheet"></head>
+    <script>
+        function addIngredient() {
+            // Create a div for the new ingredient input
+            var newDiv = document.createElement("div");
+            newDiv.innerHTML = '<select name="ingredient[]" required>' +
+                '<option value="">Select Ingredient</option>' +
+                '<option value="db option 1">db option 1</option>' +
+                '<option value="db option 2">db option 2</option>' +
+                '<option value="db option 3">db option 3</option>' +
+                '<option value="db option 4">db option 4</option>' +
+                '</select>' +
+                ' Quantity: <input type="text" name="quantity[]" required>'+
+                ' Units: <input type="text" name="quantity[]" required>';
+
+            document.getElementById("ingredientsList").appendChild(newDiv);
+        }
+    </script>
+</head>
+<body>
+
+    <div class="header">
+        <a href="/recipes.html"><div id="title">Culinary Canvas</div></a>
+    </div>
+
+<form action="/submit-your-form-endpoint" method="post">
+    <label for="mealType">Meal Type:</label>
+    <select name="mealType" id="mealType">
+        <option value="breakfast">Breakfast</option>
+        <option value="lunch">Lunch</option>
+        <option value="dinner">Dinner</option>
+        <option value="snack">Snack</option>
+    </select>
+    <br>
+    <label for="recipeName">Recipe Name:</label>
+    <input type="text" id="recipeName" name="recipeName" placeholder="Your Recipe Name">
+    <br>
+    <label>Add Ingredients to Recipe:</label>
+    <div id="ingredientsList">
+        <!-- Placeholder for ingredients and quantities -->
+    </div>
+    <button type="button" onclick="addIngredient()">Add Ingredient</button>
+    <br>
+    <input type="submit" value="Submit">
+</form>
+
+</body>
+</html>
