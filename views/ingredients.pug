@@ -1,0 +1,7 @@
+extends layout
+
+block content
+  h1 Ingredients List
+  ul#ingredientsList
+    each row in rows
+      li= row.ingredients // Adjust 'name' to match the actual field name in your database

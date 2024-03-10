@@ -5,6 +5,10 @@ const mysql = require('mysql');
 const app = express();
 const port = 3000;
 
+// Setup Pug as the view engine
+app.set('view engine', 'pug');
+app.set('views', path.join(__dirname, 'views'));
+
 const connection = mysql.createConnection({
   host: 'localhost',
   user: 'root',
@@ -20,28 +24,19 @@ connection.connect((err) => {
   console.log('Connected to database');
 });
 
-app.get('/ingredients.html', (req, res) => {
-  // Query to select all records from a table (replace 'your_table_name' with your actual table name)
-  const sql = 'SELECT * FROM CulinaryCanvas.ingredients';
-
-  // Execute the query
+app.get('/ingredients', (req, res) => {
+  const sql = 'SELECT * FROM ingredients'; // Adjusted SQL to match your table name
   connection.query(sql, (err, rows) => {
     if (err) {
       console.error('Error executing query:', err);
       res.status(500).send('Error retrieving data');
       return;
     }
-
-    // Display the results in the console
-    console.log('All records from the table:');
-    rows.forEach((row) => {
-      console.log(row);
-    });
-
-    // Send response to the client
-    res.send('Data displayed in the console');
+    // Render the Pug template and pass the rows for dynamic content
+    res.render('ingredients', {rows: rows});
   });
 });
+
 
 
 // Serve static files from the 'public' directory
