@@ -81,6 +81,29 @@ app.get('/viewRecipes', (req, res) => {
   });
 });
 
+app.post('/newRecipe', (req, res) => {
+  // Extract information from request body
+  const { mealType, recipeName, ingredient, quantity, units } = req.body;
+  // Assuming `ingredient` is an array. If not, adjust accordingly.
+
+  // Insert recipe into the database. This is a simplified example. You'll need to handle each ingredient.
+  // Consider using transactions if inserting into multiple tables or handling multiple ingredients.
+  const sql = 'INSERT INTO recipes (meals, recipe, ingredient, quantity, units_unit_id) VALUES ?';
+  
+  // Prepare values. This part needs to be adjusted based on how you receive and process ingredients.
+  const values = ingredient.map((ing, index) => [mealType, recipeName, ing, quantity[index], units[index]]);
+
+  connection.query(sql, [values], (err, result) => {
+    if (err) {
+      console.error('Error inserting recipe:', err);
+      res.status(500).send('Error saving the recipe');
+      return;
+    }
+    res.send('Recipe added successfully');
+  });
+});
+
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.listen(port, () => {
