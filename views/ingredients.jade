@@ -1,7 +1,23 @@
-extends layout
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Ingredients
+    link(rel="stylesheet", href="./stylesheets/ingredients.css")
+    link(rel="preconnect", href="https://fonts.googleapis.com")
+    link(rel="preconnect", href="https://fonts.gstatic.com", crossorigin)
+    link(href="https://fonts.googleapis.com/css2?family=Style+Script&display=swap", rel="stylesheet")
+    script(src="./javascripts/ingredients.js")
+  body
+    .header
+      a(href="./ingredients.html")
+        #title Culinary Canvas
+
 
 block content
   h1 Ingredients List
-  ul#ingredientsList
+  ul
     each row in rows
       li= row.ingredients
+      li= row.unit

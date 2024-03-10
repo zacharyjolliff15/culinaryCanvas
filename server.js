@@ -25,7 +25,7 @@ connection.connect((err) => {
 });
 
 app.get('/ingredients', (req, res) => {
-  const sql = 'SELECT ingredients, units_unit_id FROM CulinaryCanvas.ingredients;'; // Adjusted SQL to match your table name
+  const sql = 'select ingredients, units.unit from ingredients inner join units on unit_id = ingredients.units_unit_id;'; // Adjusted SQL to match your table name
   connection.query(sql, (err, rows) => {
     if (err) {
       console.error('Error executing query:', err);
