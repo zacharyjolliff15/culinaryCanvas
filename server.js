@@ -25,7 +25,7 @@ connection.connect((err) => {
 });
 
 app.get('/ingredients', (req, res) => {
-  const sql = 'SELECT * FROM ingredients'; // Adjusted SQL to match your table name
+  const sql = 'SELECT ingredients, units_unit_id FROM CulinaryCanvas.ingredients;'; // Adjusted SQL to match your table name
   connection.query(sql, (err, rows) => {
     if (err) {
       console.error('Error executing query:', err);
@@ -33,7 +33,7 @@ app.get('/ingredients', (req, res) => {
       return;
     }
     // Render the Pug template and pass the rows for dynamic content
-    res.render('ingredients', {rows: rows});
+    res.render('ingredients.jade', {rows: rows});
   });
 });
 
