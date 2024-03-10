@@ -20,9 +20,9 @@ connection.connect((err) => {
   console.log('Connected to database');
 });
 
-app.get('/display-table', (req, res) => {
+app.get('/ingredients.html', (req, res) => {
   // Query to select all records from a table (replace 'your_table_name' with your actual table name)
-  const sql = 'SELECT * FROM units';
+  const sql = 'SELECT * FROM CulinaryCanvas.ingredients';
 
   // Execute the query
   connection.query(sql, (err, rows) => {

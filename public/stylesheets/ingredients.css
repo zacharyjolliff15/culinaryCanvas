@@ -37,3 +37,57 @@ h1 {
 }
 /* Kept the same style as the original style.css file. */
 
+
+.buttonGrid{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.indexTile{
+    height: 100px;
+    width: 100px;
+    background-color: green;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 4px;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+.image-container-createRecipe {
+    width: 50px;
+    height: 50px; 
+    background-image: url('/images/ingredients.png'); 
+    background-size: cover;
+    background-position: center; 
+    margin: 4px;
+}
+
+.image-container-discoverRecipe {
+    width: 60px;
+    height: 60px;
+    background-image: url('/images/discoverRecipe.png'); 
+    background-size: cover;
+    background-position: center;
+}
+
+.myRecipes{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    background-color: rgba(128, 128, 128, 0.254);
+
+}
+
+.indexTile a, .indexTile a:visited, .indexTile a:hover, .indexTile a:active {
+    text-decoration: none;
+    color: inherit; /* Keeps the text color the same as it is without the link */
+}
+
