@@ -1,0 +1,53 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title New Recipe
+    link(rel="stylesheet", href="./stylesheets/newRecipe.css")
+    link(rel="preconnect", href="https://fonts.googleapis.com")
+    link(rel="preconnect", href="https://fonts.gstatic.com", crossorigin)
+    link(href="https://fonts.googleapis.com/css2?family=Style+Script&display=swap", rel="stylesheet")
+    script.
+      var ingredientsData = []; // Initialize with empty array to ensure script block is valid.
+
+  body
+    .header
+      a(href="./recipes.html") #title Culinary Canvas
+
+    form(action="/submit-your-form-endpoint" method="post")
+      label(for="mealType") Meal Type:
+      select(name="mealType" id="mealType")
+        option(value="breakfast") Breakfast
+        option(value="lunch") Lunch
+        option(value="dinner") Dinner
+        option(value="snack") Snack
+      br
+      label(for="recipeName") Recipe Name:
+      input(type="text" id="recipeName" name="recipeName" placeholder="Your Recipe Name")
+      br
+      label Add Ingredients to Recipe:
+      #ingredientsList
+        //- Placeholder for ingredients and quantities. Initial ingredients selection will be populated server-side.
+      button(type="button" onclick="addIngredient()") Add Ingredient
+      br
+      input(type="submit" value="Submit")
+
+    script.
+      function addIngredient() {
+        var newDiv = document.createElement("div");
+        var selectHTML = '<select name="ingredient[]" required>';
+        for (var i = 0; i < ingredientsData.length; i++) {
+          selectHTML += '<option value="' + ingredientsData[i].id + '">' + ingredientsData[i].name + '</option>';
+        }
+        selectHTML += '</select>';
+        newDiv.innerHTML = selectHTML + 
+          ' Quantity: <input type="text" name="quantity[]" required>' + 
+          ' Units: <input type="text" name="units[]" required>';
+        document.getElementById("ingredientsList").appendChild(newDiv);
+      }
+
+    script.
+      // Now you'll need to ensure that ingredientsData is correctly populated with data from your server.
+      // This assignment should be done server-side, injecting data into the template.
+      ingredientsData = !{JSON.stringify(ingredients)};

@@ -27,6 +27,20 @@ connection.connect((err) => {
   console.log('Connected to database');
 });
 
+app.get('/newRecipe', (req, res) => {
+  const sql = 'SELECT ingredients FROM `CulinaryCanvas`.`ingredients`'; // Adjust the query according to your schema
+  connection.query(sql, (err, ingredients) => {
+    if (err) {
+      console.error('Error fetching ingredients:', err);
+      res.status(500).send('Error fetching ingredients');
+      return;
+    }
+    // Assuming you're using Pug and have a template for newRecipe
+    res.render('newRecipe.jade', { ingredients });
+  });
+});
+
+
 app.get('/ingredients', (req, res) => {
   const sql = 'select ingredients, units.unit from ingredients inner join units on unit_id = ingredients.units_unit_id;'; // Adjusted SQL to match your table name
   connection.query(sql, (err, rows) => {
