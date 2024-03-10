@@ -1,0 +1,84 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html, body {
+    width: 100%;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #53c455;
+    height: 52px;
+    width:100%;
+}
+
+#title{
+    font-size: 32px;
+    font-family: "Style Script", cursive;
+    font-weight: 400;
+    font-style: normal;
+    
+    /* background-color: red; */
+}
+/* Kept the same style as the original style.css file. */
+
+
+.buttonGrid{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.indexTile{
+    height: 100px;
+    width: 100px;
+    background-color: green;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 4px;
+}
+
+.image-container-createRecipe {
+    width: 50px;
+    height: 50px; 
+    background-image: url('/images/recipes.png'); 
+    background-size: cover;
+    background-position: center; 
+    margin: 4px;
+}
+
+.image-container-discoverRecipe {
+    width: 60px;
+    height: 60px;
+    background-image: url('/images/discoverRecipe.png'); 
+    background-size: cover;
+    background-position: center;
+}
+
+.myRecipes{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    background-color: rgba(128, 128, 128, 0.254);
+
+}
