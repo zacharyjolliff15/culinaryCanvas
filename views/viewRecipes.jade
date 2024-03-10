@@ -1,0 +1,27 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Recipes
+    link(rel="stylesheet", href="./stylesheets/recipes.css")
+    link(rel="preconnect", href="https://fonts.googleapis.com")
+    link(rel="preconnect", href="https://fonts.gstatic.com", crossorigin)
+    link(href="https://fonts.googleapis.com/css2?family=Style+Script&display=swap", rel="stylesheet")
+    script(src="./javascripts/recipes.js")
+  body
+    .header
+      a(href="./recipes.html")
+        #title Culinary Canvas
+
+
+block content
+  h1 Recipes
+  ul
+    each row in rows
+      div.flex-container
+        p= row.meals
+        p= row.recipe
+        p= row.ingredient 
+        p= row.quantity
+        p= row.unit

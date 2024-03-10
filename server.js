@@ -41,6 +41,8 @@ app.get('/newRecipe', (req, res) => {
 });
 
 
+
+
 app.get('/ingredients', (req, res) => {
   const sql = 'select ingredients, units.unit from ingredients inner join units on unit_id = ingredients.units_unit_id;'; // Adjusted SQL to match your table name
   connection.query(sql, (err, rows) => {
@@ -67,8 +69,18 @@ app.post('/ingredients', (req, res) => {
   });
 });
 
+app.get('/viewRecipes', (req, res) => {
+  const sql = 'select meals, recipe, ingredient, quantity, units.unit from recipes inner join units where units_unit_id = units.unit_id'; 
+  connection.query(sql, (err, rows) => {
+    if (err) {
+      console.error('Error executing query:', err);
+      res.status(500).send('Error retrieving data');
+      return;
+    }
+    res.render('viewRecipes.jade', {rows: rows});
+  });
+});
 
-// Serve static files from the 'public' directory
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.listen(port, () => {
