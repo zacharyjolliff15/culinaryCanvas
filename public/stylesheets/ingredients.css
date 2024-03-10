@@ -91,3 +91,9 @@ h1 {
     color: inherit; /* Keeps the text color the same as it is without the link */
 }
 
+.flex-container{
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    
+}

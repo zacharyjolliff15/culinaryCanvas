@@ -16,8 +16,9 @@ html(lang="en")
 
 
 block content
-  h1 Ingredients List
+  h1 Ingredient | Units
   ul
     each row in rows
-      li= row.ingredients
-      li= row.unit
+      div.flex-container
+        p= row.ingredients
+        p= row.unit
