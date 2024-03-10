@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Ingredient</title>
+    <link rel="stylesheet" href="./stylesheets/newIngredient.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Style+Script&display=swap" rel="stylesheet"></head>
+
+</head>
+<body>
+
+    <div class="header">
+        <a href="./ingredients.html"><div id="title">Culinary Canvas</div></a>
+    </div>
+
+<form action="/submit-your-form-endpoint" method="post">
+    <label for="recipeName">Ingredient:</label>
+    <input type="text" id="recipeName" name="recipeName" placeholder="Ingredient Name">
+    <br>
+
+    <label for="mealType">Units:</label>
+    <select name="mealType" id="mealType">
+        <option value="breakfast">count</option>
+        <option value="lunch">grams</option>
+        <option value="dinner">ounces</option>
+    </select>
+    <br>
+
+    <input type="submit" onclick="addIngredient()" value="Submit">
+</form>
+
+</body>
+</html>
