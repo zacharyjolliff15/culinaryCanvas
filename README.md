@@ -54,12 +54,8 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-This is a free to use application that makes meal planning easy to do in just a few simple steps.
-1) Select the ingredients button to open the ingredients page and start adding ingredients. Input the name of the ingredient, and select from a drop down box the unit of the ingredient. Next press the button to add the ingredients.
+This is a free to use application that makes meal planning easy to do in just a few simple steps. With this application you are allowed to add custom recipes and plan what you are going to eat for the entire week. 
 
-2) Select the recipes button to open the recipes page. Use the drop down menu choose whether the recipe you are adding is either for breakfast, lunch, dinner, or a snack. You will then enter the name of the recipe and select the ingredients and their quantity.
-
-3) Once you complete the first two steps, you can now select either the meals, shopping list, or weekly plan buttons. The meals button will display all of the recipes based on thier type. The shopping list button will display a shopping list for the ingredients of a recipe that you have entered. The weekly plan button allows you to choose what meals you would like to eath throughout the week.
     
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -101,9 +97,13 @@ Here is where you can download the application.
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+1) Select the ingredients button to open the ingredients page and start adding ingredients. Input the name of the ingredient, and select from a drop down box the unit of the ingredient. Next press the button to add the ingredients.
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+2) Select the recipes button to open the recipes page. Use the drop down menu choose whether the recipe you are adding is either for breakfast, lunch, dinner, or a snack. You will then enter the name of the recipe and select the ingredients and their quantity.
+
+3) Once you complete the first two steps, you can now select either the meals, shopping list, or weekly plan buttons. The meals button will display all of the recipes based on thier type. The shopping list button will display a shopping list for the ingredients of a recipe that you have entered. The weekly plan button allows you to choose what meals you would like to eath throughout the week.
+
+_For more examples, please refer to the [Documentation](https://github.com/zacharyjolliff15/culinaryCanvas)_
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
